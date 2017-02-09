@@ -2,5 +2,9 @@
 export default {
     path: '/',
     name: 'Hello',
-    component: resolve => require(['components/Hello'], resolve)
+    component: resolve => {
+        require.ensure([], () => {
+            resolve(require('components/Hello'))
+        }, 'index')
+    }
 }
