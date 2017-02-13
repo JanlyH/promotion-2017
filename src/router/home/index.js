@@ -4,7 +4,7 @@ export default {
     name: 'Hello',
     component: resolve => {
         require.ensure([], () => {
-            resolve(require('components/Hello'))
+            
         }, 'index')
     }
 }

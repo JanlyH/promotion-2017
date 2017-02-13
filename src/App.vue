@@ -1,23 +1,20 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view> </router-view>
-  </div>
+    <div id="app">
+        <top-nav></top-nav>
+        <router-view> </router-view>
+    </div>
 </template>
 
 <script>
+import topNav from 'components/common/nav/nav';
 export default {
-  name: 'app'
+    name: 'app',
+    components: {
+      topNav
+    }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    @import 'assets/css/reset.css';
 </style>
