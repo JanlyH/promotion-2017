@@ -27,6 +27,9 @@ main, article, aside, figure, footer, header, nav, section, details, summary {di
 
 /* Handle box-sizing while better addressing child elements:
    http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+body {
+	background-color: #fff;
+}
 html {
 	box-sizing: border-box;
 }

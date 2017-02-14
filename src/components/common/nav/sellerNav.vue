@@ -1,6 +1,6 @@
 <template>
     <div class="seller-nav">
-        这个是卖家导航
+        <div class="seller-warp"></div>
     </div>
 </template>
 
@@ -11,10 +11,21 @@
             return {
                 
             }
+        },
+        methods: {
+            
         }
     }
 </script>
 
 <style lang="scss" scope>
-
+    .seller-nav{
+        width: 100%;
+        background-color: #f5f5f5;
+        .seller-warp{
+            width: 1200px;
+            height: 24px;
+            margin: 0 auto;
+        }
+    }
 </style>
