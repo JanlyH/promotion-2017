@@ -1,20 +1,23 @@
 <template>
-    <div id="app">
-        <top-nav></top-nav>
-        <router-view> </router-view>
-    </div>
+<div id="app">
+    <top-nav></top-nav>
+    <sidebar></sidebar>
+    <router-view> </router-view>
+</div>
 </template>
 
 <script>
-import topNav from 'components/common/nav/nav';
+import topNav from 'components/common/nav/nav'
+import sidebar from 'components/common/nav/sidebar'
 export default {
     name: 'app',
     components: {
-      topNav
+        topNav,
+        sidebar
     }
 }
 </script>
 
 <style>
-    @import 'assets/css/reset.css';
+@import 'assets/css/reset.css';
 </style>

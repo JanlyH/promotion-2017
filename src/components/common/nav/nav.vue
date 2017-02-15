@@ -10,42 +10,42 @@
                 <div class="logo">
 
                 </div>
-                <el-menu theme="dark" default-active="1" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+                <el-popover  placement="bottom-end" width="360" trigger="hover" ref="seller">
+
+                    <!-- 用户信息 -->
+                    <div class="seller-warp">
+                        <div class="seller-info">
+                            <div class="seller-logo">
+                                <img src="https://img.alicdn.com/imgextra/i2/17157061/TB2F929tVXXXXcLXXXXXXXXXXXX-17157061.jpg">
+                            </div>
+                            <div class="base-info">
+                                <div class="seller-nick">宝贝团公司<i class="seller-tag">全能版</i></div>
+                                <div class="due-time">
+                                    软件到期时间：2017-01-11<el-button type="primary" size="mini" class="renew-btn">续费</el-button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-warp">
+                            <div class="btn-bar">
+                                <el-button size="small">推荐朋友</el-button>
+                                <el-button size="small">我的积分</el-button>
+                                <el-button size="small">短信充值</el-button>
+                            </div>
+                            <div class="btn-bar">
+                                <el-button size="small">软件设置</el-button>
+                                <el-button size="small">子账号管理</el-button>
+                                <el-button size="small">卖家学堂</el-button>
+                            </div>
+                        </div>
+                        <div class="sign-out">退出登录</div>
+                    </div>
+                </el-popover>
+                <el-menu theme="dark" class="el-menu-demo" mode="horizontal" @select="handleSelect">
                     <el-menu-item index="1">卖家中心</el-menu-item>
                     <el-menu-item index="2">进入店铺</el-menu-item>
-                    <el-popover  placement="bottom-end" width="360" trigger="hover">
-                        <el-submenu index="3" slot="reference" >
-                            <template slot="title">宝贝团公司</template>
-                        </el-submenu>
-
-                        <!-- 用户信息 -->
-                        <div class="seller-warp">
-                            <div class="seller-info">
-                                <div class="seller-logo">
-                                    <img src="https://img.alicdn.com/imgextra/i2/17157061/TB2F929tVXXXXcLXXXXXXXXXXXX-17157061.jpg">
-                                </div>
-                                <div class="base-info">
-                                    <div class="seller-nick">宝贝团公司<i class="seller-tag">全能版</i></div>
-                                    <div class="due-time">
-                                        软件到期时间：2017-01-11<el-button type="primary" size="mini" class="renew-btn">续费</el-button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="btn-warp">
-                                <div class="btn-bar">
-                                    <el-button size="small">推荐朋友</el-button>
-                                    <el-button size="small">我的积分</el-button>
-                                    <el-button size="small">短信充值</el-button>
-                                </div>
-                                <div class="btn-bar">
-                                    <el-button size="small">软件设置</el-button>
-                                    <el-button size="small">子账号管理</el-button>
-                                    <el-button size="small">卖家学堂</el-button>
-                                </div>
-                            </div>
-                            <div class="sign-out">退出登录</div>
-                        </div>
-                    </el-popover>
+                    <el-submenu index="3" v-popover:seller >
+                        <template slot="title">宝贝团公司</template>
+                    </el-submenu>
                 </el-menu>
             </div>
         </div>
@@ -87,6 +87,9 @@
             }
             .el-menu-demo{
                 float: right;
+            }
+            .el-menu-item.is-active {
+                color: #bfcbd9;
             }
         }
     }
