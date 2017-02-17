@@ -7,8 +7,8 @@
         <!--  顶部主导航条 -->
         <div class="top-nav">
             <div class="main-nav">
-                <div class="logo">
-
+                <div class="logo-bar">
+                    <div class="logo"></div>
                 </div>
                 <el-popover  placement="bottom-end" width="360" trigger="hover" ref="seller">
 
@@ -74,16 +74,23 @@
     }
 </script>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
     .top-nav{
         background-color: #324157;
         .main-nav{
             width: 1200px;
             margin: 0 auto;
             overflow: hidden;
-            .logo{
+            .logo-bar{
                 float: left;
                 width: 200px;
+                .logo{
+                    float: left;
+                    width: 60px;
+                    height: 60px;
+                    overflow: hidden;
+                    background: url('https://img.alicdn.com/imgextra/i1/17157061/TB2v4DCdHJmpuFjSZFBXXXaZXXa-17157061.png_70x70.jpg') no-repeat 50% 50%;
+                }
             }
             .el-menu-demo{
                 float: right;
