@@ -12,6 +12,6 @@ export default {
 <style lang="scss" scoped>
     .seller-map{
         width: 600px;
-        height: 400px;
+        height: 300px;
     }
 </style>

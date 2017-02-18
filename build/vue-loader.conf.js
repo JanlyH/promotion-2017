@@ -12,20 +12,20 @@ module.exports = {
   postcss: [
     require('autoprefixer')({
         browsers: ['last 8 versions']
-    }),
-    require('postcss-sprites')({
-        stylesheetPath: '../src/assets/css',
-        spritePath: '../src/assets/images/sprites',
-        retina: false,
-        padding: 3,
-        filterBy: function (image) {
-            //过滤一些不需要合并的图片，返回值是一个promise，默认有一个exist的filter
-            //
-            if (image.url.indexOf('/images/sprites/') === -1) {
-                return Promise.reject();
-            }
-            return Promise.resolve();
-        }
     })
-  ]
+  //   require('postcss-sprites')({
+  //       stylesheetPath: 'assets/css',
+  //       spritePath: 'assets/images/sprites',
+  //       retina: false,
+  //       padding: 3,
+  //       filterBy: function (image) {
+  //           //过滤一些不需要合并的图片，返回值是一个promise，默认有一个exist的filter
+  //           //
+  //           if (image.url.indexOf('/images/sprites/') === -1) {
+  //               return Promise.reject();
+  //           }
+  //           return Promise.resolve();
+  //       }
+  //   })
+    ]
 }

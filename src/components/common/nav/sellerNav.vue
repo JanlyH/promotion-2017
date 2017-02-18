@@ -1,13 +1,13 @@
 <template>
     <div class="seller-nav">
-        <el-popover ref="sellerMap" placement="bottom-start" width="600" trigger="hover" :visible-arrow="false" popper-class="seller-map-warp"  @show="showSellerMap" @hide="hideSellerMap">
+        <el-popover ref="sellerMap" placement="bottom-start" width="800" trigger="hover" :visible-arrow="false" popper-class="seller-map-warp"  @show="showSellerMap" @hide="hideSellerMap" :offset="-150">
             <seller-map></seller-map>
         </el-popover>
         <div class="seller-warp">
             <div class="btn-bar">
                 <div class="btn"><span class="text">续费/升级</span></div>
                 <div class="btn"><span class="text">版本区别</span></div>
-                <div class="btn seller-map-btn" v-popover:sellerMap><span class="text">网站导航</span></div>
+                <div class="btn seller-map-btn" v-popover:sellerMap :class="{hover : isShowSellerMap}"><span class="text">环游世界</span></div>
                 <div class="btn"><span class="text">签到送贝币</span></div>
             </div>
         </div>
@@ -57,10 +57,13 @@
                     transition: all .3s;
                     background-color: #f5f5f5;
                     &:hover{
-                        position: relative;
                         background-color: #fff;
-                        z-index: 2002;
+                    }
+                    &.seller-map-btn.hover{
+                        position: relative;
                         border-bottom: 1px solid #fff;
+                        background-color: #fff;
+                        z-index: 3002;
                     }
                     &+.btn{
                         .text{

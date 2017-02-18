@@ -1,11 +1,14 @@
 <template>
 <div class="sidebar">
+    <el-popover ref="Submenu" placement="right-start" width="600" trigger="hover">
+
+    </el-popover>
     <ul class="icon-list">
-        <li>
+        <li v-popover:Submenu>
             <div class="icon home"></div>
             <span>首页</span>
         </li>
-        <li>
+        <li v-popover:Submenu>
             <div class="icon home"></div>
             <span>促销管理</span>
         </li>
@@ -14,6 +17,9 @@
 </template>
 
 <script>
+import {Popover} from 'element-ui';
+import Vue from 'vue';
+Vue.use(Popover);
 export default {
     data() {
         return {
