@@ -12,7 +12,7 @@
             <span>首页</span>
         </li>
         <li v-popover:promotion>
-            <div class="icon home"></div>
+            <div class="icon discount"></div>
             <span>促销管理</span>
         </li>
         <li v-popover:SMSPromotioin>
@@ -72,9 +72,13 @@ export default {
                 width: 36px;
                 height: 36px;
                 margin: 0 17px 2px 17px;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
                 &.home{
-                    background: url('../../../assets/images/sprites/home.png') no-repeat;
-                    background-size: 100% 100%;
+                    background-image: url('../../../assets/images/sprites/home.png');
+                }
+                &.discount{
+                    background: url('../../../assets/images/sprites/discount.png');
                 }
             }
         }

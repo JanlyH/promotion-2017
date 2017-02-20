@@ -3,7 +3,7 @@
          <div class="title" v-text="title"></div>
          <div class="sub-menu-warp">
             <div class="sub-mune-item" v-for="(item, index) in items">
-                <div class="icon"></div>
+                <div class="icon" :style="{backgroundImage: `url(${item.icon})`}"></div>
             </div>
          </div>
          <div class="fn-preview"></div>
