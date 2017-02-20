@@ -1,16 +1,23 @@
 <template>
 <div class="sidebar">
-    <el-popover ref="Submenu" placement="right-start" width="600" trigger="hover">
-
+    <el-popover ref="promotion" placement="right-start" width="600" trigger="hover">
+        <sub-menu title="促销管理" :items="subMenuItems.promotion"></sub-menu>
+    </el-popover>
+    <el-popover ref="SMSPromotioin" placement="right-start" width="600" trigger="hover">
+        <sub-menu title="短信推广"></sub-menu>
     </el-popover>
     <ul class="icon-list">
-        <li v-popover:Submenu>
-            <div class="icon home"></div>
+        <li>
+            <div  class="icon home"></div>
             <span>首页</span>
         </li>
-        <li v-popover:Submenu>
+        <li v-popover:promotion>
             <div class="icon home"></div>
             <span>促销管理</span>
+        </li>
+        <li v-popover:SMSPromotioin>
+            <div class="icon home"></div>
+            <span>短信推广</span>
         </li>
     </ul>
 </div>
@@ -18,16 +25,21 @@
 
 <script>
 import {Popover} from 'element-ui';
+import subMenu from 'components/common/nav/subMenu';
+import subMenuItems from 'assets/js/common/nav/subMenuItems'
 import Vue from 'vue';
 Vue.use(Popover);
 export default {
     data() {
         return {
-
+            subMenuItems: subMenuItems
         }
     },
-    computed: {
+    methods: {
 
+    },
+    components: {
+        subMenu
     }
 }
 </script>
@@ -48,7 +60,7 @@ export default {
             li{
                 cursor: pointer;
                 float: left;
-                padding: 10px 0;
+                padding: 8px 0;
                 transition: all .3s;
                 background-color: #f5f5f5;
                 margin-left: -1px;
@@ -57,11 +69,12 @@ export default {
                 }
             }
             .icon{
-                width: 40px;
-                height: 40px;
-                margin: 0 15px 2px 15px;
+                width: 36px;
+                height: 36px;
+                margin: 0 17px 2px 17px;
                 &.home{
                     background: url('../../../assets/images/sprites/home.png') no-repeat;
+                    background-size: 100% 100%;
                 }
             }
         }
